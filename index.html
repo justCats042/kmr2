@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>KMR Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">KMR</div>
+    <ul class="nav-links">
+        <li><a href="#" data-index="0">Home</a></li>
+        <li><a href="#" data-index="1">About</a></li>
+        <li><a href="#" data-index="2">Services</a></li>
+        <li><a href="#" data-index="3">Event</a></li>
+        <li><a href="#" data-index="4">Insight</a></li>
+        <li><a href="#" data-index="5">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- CAROUSEL -->
+<div class="carousel-wrapper">
+
+    <div class="carousel-container">
+
+        <!-- HOME (EDIT AREA) -->
+        <section class="carousel-section" id="home">
+            <div class="home-content">
+                <h1>Welcome to KMR</h1>
+                <p>We design and build websites and apps, offer expert consultations, and host hands-on seminars to help you grow. Explore our services or schedule a session to get started.</p>
+                <div class="home-actions">
+                    <a href="#" data-index="2" class="btn">Our Services</a>
+                    <a href="#" data-index="3" class="btn">Schedule</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="carousel-section" id="about">
+
+            <div class="member-card">
+                <h1>Dan Kirby O. Pador</h1>
+                <h2>BSIT-1</h2>
+                <p>
+                Hello, I am a passionate student in BSIT-1 in UC-Banilad.
+                I am willing to learn along the way and to solve the problems that come my way.
+                I specialize myself with C programming, basic web development (HTML, CSS, JavaScript and C programming), and networking concepts.
+                </p>
+            </div>
+
+            <div class="member-card">
+                <h1>Russel David B. Austria</h1>
+                <h2>BSIT-1</h2>
+                <p>
+                    Dedicated learner focused on coding fundamentals
+                    and problem-solving skills.
+                </p>
+            </div>
+
+            <div class="member-card">
+                <h1>Marjorie</h1>
+                <h2>BSIT-1</h2>
+                <p>
+                    Interested in UI design and front-end development.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- SERVICES -->
+        <section class="carousel-section" id="services">
+            <h1>Our Services</h1>
+
+            <div class="services-grid">
+                <a href="#" class="service-box" data-index="3">Web Creation</a>
+                <a href="#" class="service-box" data-index="3">App Creation</a>
+                <a href="#" class="service-box" data-index="3">Consultation</a>
+                <a href="#" class="service-box" data-index="3">Seminar</a>
+            </div>
+        </section>
+
+        <!-- SCHEDULE / CALENDAR -->
+        <section class="carousel-section" id="schedule">
+            <h1>Schedule</h1>
+
+            <div class="schedule-wrapper">
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button class="prev-month">&#8249;</button>
+                        <div class="month-year"></div>
+                        <button class="next-month">&#8250;</button>
+                    </div>
+                    <div class="day-names">
+                        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                    </div>
+                    <div class="calendar-grid"></div>
+                </div>
+
+                <aside class="event-panel">
+                    <h2>Events for <span class="selected-date">—</span></h2>
+                    <button class="add-event-btn">Add Event</button>
+                    <ul class="events-list"></ul>
+
+                    <div class="date-notes">
+                        <label for="date-note">Notes for selected date</label>
+                        <textarea id="date-note" rows="6" placeholder="Add notes or appointment details..."></textarea>
+                        <div style="margin-top:8px; display:flex; gap:8px; justify-content:flex-end;">
+                            <button id="save-note-btn">Save Note</button>
+                            <button id="clear-note-btn">Clear Note</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+        </section>
+
+        <!-- INSIGHT (HIGHLIGHTS) -->
+        <section class="carousel-section" id="insight">
+            <h1>Insight</h1>
+            <p>Highlights and interesting items happening soon.</p>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h3>New Workshop</h3>
+                    <p>Join our web development workshop on modern CSS techniques.</p>
+                </div>
+                <div class="insight-card">
+                    <h3>Project Showcase</h3>
+                    <p>Student projects will be presented next month — stay tuned.</p>
+                </div>
+                <div class="insight-card">
+                    <h3>Guest Speaker</h3>
+                    <p>Industry speaker on networking and security coming soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT (EDIT AREA) -->
+        <section class="carousel-section" id="contact">
+            <h1>Contact Section</h1>
+            <p>This area will contain contact details later.</p>
+            <div class="edit-box">Editable space</div>
+        </section>
+
+    </div>
+
+    <!-- ARROWS -->
+    <button class="nav-arrow left">&#10094;</button>
+    <button class="nav-arrow right">&#10095;</button>
+
+</div>
+
+    <!-- Event Modal (moved outside carousel so it's centered on-screen) -->
+    <div class="modal hidden" id="event-modal">
+        <div class="modal-content">
+            <h3 id="modal-date-heading">Add Event</h3>
+            <form id="event-form">
+                <label>Title<br><input type="text" name="title" required></label>
+                <label>Time<br><input type="time" name="time"></label>
+                <label>Start Date<br><input type="date" name="start" required></label>
+                <label>End Date<br><input type="date" name="end" required></label>
+                <label>Description<br><textarea name="desc"></textarea></label>
+                <div class="modal-actions">
+                    <button type="submit">Save</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="button" class="delete-all-btn">Delete All Instances</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
