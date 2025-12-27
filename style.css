@@ -46,7 +46,7 @@ p { margin-bottom: 18px; line-height: 1.6; }
 .carousel-container { display: flex; height: 100%; transition: transform 0.5s ease; }
 .carousel-section {
     flex: 0 0 100%; height: 100%; overflow-y: auto;
-    padding: 120px 100px 60px 100px; /* top right bottom left */
+    padding: 80px 100px 40px 100px; /* reduced top/bottom padding to avoid extra scrolling */
 }
 
 /* Generic components */
@@ -74,23 +74,38 @@ p { margin-bottom: 18px; line-height: 1.6; }
 /* Carousel arrows */
 .nav-arrow {
     position: absolute; top: 50%; transform: translateY(-50%);
-    font-size: 50px; background: none; border: none; color: #fff; cursor: pointer; z-index: 2000;
+    width: 56px; height: 56px; display:flex; align-items:center; justify-content:center;
+    font-size: 28px; background: rgba(0,0,0,0.55); border: none; color: #fff; cursor: pointer; z-index: 2000;
+    border-radius: 50%; box-shadow: 0 6px 16px rgba(0,0,0,0.6);
 }
-.nav-arrow.left { left: 20px; }
-.nav-arrow.right { right: 20px; }
+.nav-arrow.left { left: 18px; }
+.nav-arrow.right { right: 18px; }
 
 /* --------------------------
    Calendar & Schedule
    -------------------------- */
 .schedule-wrapper { display: flex; gap: 30px; margin-top: 30px; }
 .calendar {
-    width: 720px; background: #0f0f0f; border: 1px solid #2a2a2a; padding: 16px; border-radius: 6px;
+    width: 520px; background: #0f0f0f; border: 1px solid #2a2a2a; padding: 12px; border-radius: 6px;
 }
 .calendar-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+
+/* Center main content blocks inside each carousel section to avoid left alignment */
+.carousel-section > .schedule-wrapper,
+.carousel-section > .insights-grid,
+.carousel-section > .contact-grid,
+.carousel-section > .services-grid {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.schedule-wrapper { justify-content: center; }
+.insights-grid { justify-items: center; }
 .calendar-header .month-year { font-size:20px; font-weight:bold; }
 .day-names { display:grid; grid-template-columns:repeat(7,1fr); text-align:center; color:#bbb; margin-bottom:6px; }
 .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
-.calendar-cell { min-height:80px; background:#080808; border:1px solid #1f1f1f; padding:8px; border-radius:4px; color:#ddd; position:relative; }
+.calendar-cell { min-height:60px; background:#080808; border:1px solid #1f1f1f; padding:6px; border-radius:4px; color:#ddd; position:relative; }
 .calendar-cell.empty { background:transparent; border:none; }
 .calendar-cell.today { outline:2px solid #5a9cff; }
 .calendar-cell .day-num { font-weight:bold; margin-bottom:6px; }
@@ -126,8 +141,46 @@ p { margin-bottom: 18px; line-height: 1.6; }
 .insight-card h3 { margin-bottom:8px; }
 .insight-card p { color:#ccc; }
 
+/* Center the Insight section header, description, and grid */
+#insight > h1, #insight > p {
+    text-align: center;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#insight .insights-grid {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+}
+
+.contact-grid { display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start; margin-top: 14px; max-width: 960px; margin-left: auto; margin-right: auto; }
+.contact-details .lead { color:#ccc; margin-bottom: 14px; }
+.contact-details, .contact-form-wrap { display: flex; flex-direction: column; justify-content: center; }
+.contact-form-wrap { max-height: 56vh; overflow: auto; padding-right: 8px; }
+.contact-details .detail-item { margin-bottom: 10px; color:#ddd; }
+.contact-details .detail-item p { margin:6px 0 0 0; color:#ccc; }
+.map-placeholder { margin-top:12px; color:#777; font-size:14px; }
+
+/* Contact form styles */
+.contact-form .form-row { margin-bottom: 12px; }
+.contact-form label { display:block; margin-bottom:6px; color:#ddd; font-weight:600; }
+.contact-form input, .contact-form textarea { width:100%; padding:10px 12px; background:#0b0b0b; color:#fff; border:1px solid #222; border-radius:6px; }
+.contact-form textarea { resize:vertical; min-height:120px; }
+.contact-form .form-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:8px; }
+.contact-form button { padding:10px 14px; border-radius:6px; border:none; cursor:pointer; font-weight:600; }
+.contact-form button[type="submit"] { background:#ff7a59; color:#fff; }
+.contact-form .btn-reset { background:transparent; border:1px solid #2a2a2a; color:#ddd; }
+.privacy-note { color:#999; font-size:13px; margin-top:10px; }
+
 /* Responsive */
 @media (max-width: 900px) {
     .schedule-wrapper { flex-direction: column; }
     .calendar, .event-panel { width: 100%; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .carousel-section { padding: 100px 22px 60px 22px; }
+    .nav-arrow { width:44px; height:44px; font-size:22px; left:12px; right:12px; }
+    .nav-arrow.left { left: 8px; }
+    .nav-arrow.right { right: 8px; }
 }
