@@ -184,3 +184,26 @@ p { margin-bottom: 18px; line-height: 1.6; }
     .nav-arrow.left { left: 8px; }
     .nav-arrow.right { right: 8px; }
 }
+
+/* ===== FORCE MOBILE ARROW FIX ===== */
+@media (max-width: 768px) {
+    .carousel-wrapper .nav-arrow {
+        top: auto !important;
+        bottom: 16px !important;
+        transform: none !important;
+
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 20px !important;
+    }
+
+    .carousel-wrapper .nav-arrow.left {
+        left: 18% !important;
+        right: auto !important;
+    }
+
+    .carousel-wrapper .nav-arrow.right {
+        right: 18% !important;
+        left: auto !important;
+    }
+}
