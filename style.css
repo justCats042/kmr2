@@ -207,3 +207,30 @@ p { margin-bottom: 18px; line-height: 1.6; }
         left: auto !important;
     }
 }
+
+/* ===== FINAL MOBILE ARROW FIX (POSITION: FIXED) ===== */
+@media (max-width: 768px) {
+    .nav-arrow {
+        position: fixed !important;
+        bottom: 16px !important;
+        top: auto !important;
+        transform: none !important;
+
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 20px !important;
+
+        background: rgba(0,0,0,0.75);
+        z-index: 9999;
+    }
+
+    .nav-arrow.left {
+        left: 20% !important;
+        right: auto !important;
+    }
+
+    .nav-arrow.right {
+        right: 20% !important;
+        left: auto !important;
+    }
+}
