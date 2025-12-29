@@ -6,20 +6,22 @@
     <meta name="theme-color" content="#000000">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>KMR</title>
+    <title>KMR Inc.</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <div class="logo">KMR</div>
+    <div class="logo"><i class="fas fa-rocket"></i>KMR Inc.</div>
     <ul class="nav-links">
         <li><a href="#" data-index="0">Home</a></li>
         <li><a href="#" data-index="1">About Us</a></li>
         <li><a href="#" data-index="2">Services</a></li>
-        <li><a href="#" data-index="3">Event</a></li>
-        <li><a href="#" data-index="4">Insight</a></li>
+        <li><a href="#" data-index="3">Events</a></li>
+        <li><a href="#" data-index="4">Insights</a></li>
         <li><a href="#" data-index="5">Contact</a></li>
     </ul>
 </nav>
@@ -35,38 +37,43 @@
                 <h1>Welcome to KMR</h1>
                 <p>We design and build websites and apps, offer expert consultations, and host hands-on seminars to help you grow. Explore our services or schedule a session to get started.</p>
                 <div class="home-actions">
-                    <a href="#" data-index="2" class="btn">Our Services</a>
-                    <a href="#" data-index="3" class="btn">Schedule</a>
+                <a href="#about" class="btn" data-index="1">Get Started</a>
                 </div>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section class="carousel-section" id="about">
-    <div class="about-intro">
-        <h1>About Us</h1>
+    <div class="about-us">
+    <h1>About Us</h1>
 
-        <div class="about-block">
+    <div class="cards-row">
+        <div class="member-card">
+            <i class="fas fa-handshake card-icon vision-icon"></i>
             <h2>Our Vision</h2>
             <p>To become a trusted and innovative technology group that empowers individuals and organizations through accessible web and application solutions, continuous learning, and meaningful digital experiences.</p>
         </div>
 
-        <div class="about-block">
+        <div class="member-card">
+            <i class="fas fa-list-check card-icon mission-icon"></i>
             <h2>Our Mission</h2>
             <p>To provide high-quality, accessible technology solutions that empower individuals and organizations to thrive in the digital world.</p>
         </div>
 
-        <div class="about-block">
+        <div class="member-card">
+            <i class="fas fa-heart card-icon values-icon"></i>
             <h2>Our Core Values</h2>
-            <ul>
-                <li><strong>Innovation:</strong><br> We embrace creativity and continuously explore new technologies to deliver modern and effective solutions.</li>
-                <li><strong>Collaboration:</strong><br> We believe that teamwork, communication, and shared ideas lead to stronger results.</li>
-                <li><strong>Continuous Learning:</strong><br> We are committed to improving our skills and knowledge to adapt to the fast-changing tech industry.</li>
-                <li><strong>Quality & Responsibility:</strong><br> We value clean, functional, and user-focused work while taking responsibility for every project we handle.</li>
-                <li><strong>Growth Mindset:</strong><br> We view challenges as opportunities to learn, improve, and grow both individually and as a team.</li>
+            <ul class="core-values">
+                <li class="innovation"><i class="fas fa-lightbulb"></i> <strong>Innovation</strong></li>
+                <li class="collaboration"><i class="fas fa-handshake"></i> <strong>Collaboration</strong></li>
+                <li class="learning"><i class="fas fa-book-open"></i> <strong>Continuous Learning</strong></li>
+                <li class="quality"><i class="fas fa-check-circle"></i> <strong>Quality & Responsibility</strong></li>
+                <li class="growth"><i class="fas fa-seedling"></i> <strong>Growth Mindset</strong></li>
             </ul>
         </div>
-    </div>  
+    </div>
+</div>
+
         <h2>Meet the Team</h2>
             <div class="member-card">
                 <h1>Dan Kirby O. Pador</h1>
@@ -100,10 +107,10 @@
             <h1>Our Services</h1>
 
             <div class="services-grid">
-                <a href="#" class="service-box" data-index="3">Web Creation</a>
-                <a href="#" class="service-box" data-index="3">App Creation</a>
-                <a href="#" class="service-box" data-index="3">Consultation</a>
-                <a href="#" class="service-box" data-index="3">Seminar</a>
+                <a href="#" class="service-box" data-index="3"><i class="fa-solid fa-code"></i>Web Creation</a>
+                <a href="#" class="service-box" data-index="3"><i class="fa-solid fa-mobile-screen-button"></i>App Creation</a>
+                <a href="#" class="service-box" data-index="3"><i class="fa-solid fa-comments"></i>Consultation</a>
+                <a href="#" class="service-box" data-index="3"><i class="fa-solid fa-chalkboard-user"></i>Seminar</a>
             </div>
         </section>
 

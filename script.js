@@ -1,8 +1,3 @@
-/* -------------------------
-   Refactored Calendar JS (shorter, delegated)
-   - Keeps full feature set (multi-day events, notes, edit/delete/delete-all)
-   - Uses templates and event delegation to reduce repeated listeners
-   ------------------------- */
 
 /* Carousel & Navigation */
 const container = document.querySelector('.carousel-container');
@@ -11,7 +6,7 @@ const leftBtn = document.querySelector('.nav-arrow.left');
 const rightBtn = document.querySelector('.nav-arrow.right');
 const navLinks = document.querySelectorAll('.nav-links a');
 let index = 0;
-const updateCarousel = () => container.style.transform = `translateX(-${index * 100}vw)`;
+const updateCarousel = () => container.style.transform = `translateX(-${index * 100}%)`;
 const updateScheduleVisibility = () => document.body.classList.toggle('show-schedule', index === Array.from(sections).findIndex(s => s.id === 'schedule'));
 const updateCarouselAndVisibility = () => { updateCarousel(); updateScheduleVisibility(); };
 updateScheduleVisibility();

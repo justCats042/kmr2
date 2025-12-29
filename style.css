@@ -1,4 +1,3 @@
-
 /* Reset */
 * {
     margin: 0;
@@ -8,10 +7,11 @@
 
 /* Base */
 html, body {
-    background: #000;
+    background: linear-gradient(135deg, #1a1a2e, #4b0082);
     color: #fff;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 h1 { margin-bottom: 15px; }
@@ -21,7 +21,7 @@ p { margin-bottom: 18px; line-height: 1.6; }
 /* Navbar */
 .navbar {
     position: sticky; top: 0; z-index: 1000;
-    background: #000 !important; padding: 15px 30px;
+    background: linear-gradient(135deg, #1b0e46, #4816ab); padding: 15px 30px;
     display: flex; justify-content: space-between;
     border-bottom: none; box-shadow: none;
 }
@@ -174,58 +174,58 @@ p { margin-bottom: 18px; line-height: 1.6; }
     .nav-arrow.right { right: 8px; }
 }
 
-/* ===== FORCE MOBILE ARROW FIX ===== */
-@media (max-width: 768px) {
-    .carousel-wrapper .nav-arrow {
-        top: auto !important;
-        bottom: 16px !important;
-        transform: none !important;
-
-        width: 44px !important;
-        height: 44px !important;
-        font-size: 20px !important;
-    }
-
-    .carousel-wrapper .nav-arrow.left {
-        left: 18% !important;
-        right: auto !important;
-    }
-
-    .carousel-wrapper .nav-arrow.right {
-        right: 18% !important;
-        left: auto !important;
-    }
+/* Default: Desktop / Laptop */
+.carousel-wrapper .nav-arrow {
+    position: absolute;       
+    top: 50%;                 
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
 }
 
-/* ===== FINAL MOBILE ARROW FIX (POSITION: FIXED) ===== */
+.carousel-wrapper .nav-arrow.left {
+    left: 10px;
+}
+
+.carousel-wrapper .nav-arrow.right {
+    right: 10px;
+}
+
+/* Mobile: Arrows at bottom */
 @media (max-width: 768px) {
-    .nav-arrow {
-        position: fixed !important;
-        bottom: 16px !important;
-        top: auto !important;
-        transform: none !important;
-
-        width: 44px !important;
-        height: 44px !important;
-        font-size: 20px !important;
-
+    .carousel-wrapper .nav-arrow {
+        position: fixed;       
+        bottom: 16px;
+        top: auto;
+        transform: none;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
         background: rgba(0,0,0,0.75);
+        border-radius: 50%;
         z-index: 9999;
     }
 
-    .nav-arrow.left {
-        left: 20% !important;
-        right: auto !important;
+    .carousel-wrapper .nav-arrow.left {
+        left: 18%;
+        right: auto;
     }
 
-    .nav-arrow.right {
-        right: 20% !important;
-        left: auto !important;
+    .carousel-wrapper .nav-arrow.right {
+        right: 18%;
+        left: auto;
     }
 }
-/* =========================
-   ABOUT US – Vision / Mission / Values
-   ========================= */
+
+/* ABOUT US – Vision / Mission / Values */
 
 .about-intro {
     max-width: 900px;
@@ -265,3 +265,82 @@ p { margin-bottom: 18px; line-height: 1.6; }
 .about-block li strong {
     color: #fff;
 }
+.carousel-section#home {
+    background: linear-gradient(135deg, #1a0b3c, #2e0f5e);
+    color: #fff; 
+}
+/* About Us Section */
+.about-us h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cards Row */
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual Cards */
+.member-card {
+    background-color: #000000;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1 1 300px; 
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Card Icons */
+.card-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+/* Specific Icon Colors */
+.vision-icon { color: #e25555; }
+.mission-icon { color: #28a745; }
+.values-icon { color: #ff7f50; }
+
+/* Card Headings */
+.member-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Card Paragraphs */
+.member-card p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Core Values List */
+.core-values {
+    list-style: none; /* remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.core-values li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Core Values Icon Colors */
+.core-values li.innovation i { color: #FFA500; }
+.core-values li.collaboration i { color: #007BFF; }
+.core-values li.learning i { color: #6f42c1; }
+.core-values li.quality i { color: #28a745; }
+.core-values li.growth i { color: #20c997; }
